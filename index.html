@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Our Amazing Seniors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <div class="initial-card">
+        <div class="card-content">
+            <h1 class="glowing-text">To the best Seniors we could have ever asked for</h1>
+            <p class="subtitle">WE Will Never Forget You!</p>
+            <div class="card-decoration">
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+            <button class="enter-button" onclick="location.href='appreciation.html'">
+                Enter the Memory Lane
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <audio id="bgMusic" src="emo.mp3" loop autoplay></audio>
+
+    <script>
+        window.addEventListener('load', () => {
+            const music = document.getElementById('bgMusic');
+            if (music) music.play();
+        });
+
+        // Add sparkle animation
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.querySelector('.card-decoration').appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 5000);
+        }
+
+        setInterval(createSparkle, 1000);
+    </script>
+</body>
+</html> 

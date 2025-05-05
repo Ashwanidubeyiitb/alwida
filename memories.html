@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaadein - Senior Commencement</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: #ffd700;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            transform: translateX(100px);
+        }
+
+        .timeline-item:nth-child(even).show {
+            transform: translateX(0);
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #ffd700;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -40px;
+        }
+
+        .timeline-date {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timeline-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .memory-quote {
+            font-style: italic;
+            color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 3px solid #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <nav class="main-nav">
+        <div class="nav-logo">🎓</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="memories.html" class="active">Yaadein</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="wishes.html">Shubhkaamnaayein</a></li>
+            <li><a href="timeline.html">Journey</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header class="hero-section">
+            <h1 class="title">Kuch Yaadein</h1>
+            <p class="subtitle">From coordie interview to SARC valfie</p>
+        </header>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Best Phase</div>
+                    <img src="8383cbe3-c429-432f-a3b7-7e0da3446445.JPG" alt="First Day" class="timeline-image">
+                    <!-- <p>I still remember ki kaise mai app na ban pane ke karan rone laga tha and kaise aap logo ne chup karaya :) !</p> -->
+                    <!-- <div class="memory-quote">"Jab pehli baar college aaye the, kitna dar lag raha tha!"</div> -->
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">First College Fest</div>
+                    <img src="image1.png" alt="College Fest" class="timeline-image">
+                    <!-- <p>Pehla college fest! Kitna mazaa aaya tha performance karte hue!</p>
+                    <div class="memory-quote">"Stage par perform karna yaad hai? Kitna nervous tha!"</div> -->
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Late Night Study Sessions</div>
+                    <img src="IMG-20250505-WA0006.jpg" alt="Study Session" class="timeline-image">
+                    <!-- <p>Exam ke time late night study sessions... Chai aur pakode ke saath!</p>
+                    <div class="memory-quote">"Yaad hai woh all-nighter? Kitna hasa tha!"</div> -->
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">College Trip</div>
+                    <img src="IMG-20250505-WA0004.jpg" alt="College Trip" class="timeline-image">
+                    <!-- <p>Pehla college trip! Kitne memories banaye the!</p>
+                    <div class="memory-quote">"Bus mein gaane gaate hue, yaad hai?"</div> -->
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Final Year Project</div>
+                    <img src="20231021_222629.jpg" alt="Final Project" class="timeline-image">
+                    <!-- <p>Final year project... Kitna kuch seekha tha!</p>
+                    <div class="memory-quote">"Project ke time kitna stress tha, lekin kya result aaya!"</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memories Gallery Section -->
+    <section>
+        <h2>Photo Gallery: Yaadon Ka Pitara 📸</h2>
+        <div class="photo-gallery">
+            <div class="photo">
+                <img src="Screenshot 2024-06-01 155823.png" alt="Akash Beach Vibes">
+                <div class="caption">Akash: "Life mein thoda swag, thoda beach!" 😎🌴</div>
+            </div>
+            <div class="photo">
+                <img src="Screenshot 2024-06-01 155432.png" alt="Pirate Akash">
+                <div class="caption">Akash: "SAGAR ki votti leke itica chala" 🏴‍☠️</div>
+            </div>
+            <div class="photo">
+                <img src="IMG-20250505-WA0005.jpg" alt="Childhood Pranita">
+                <div class="caption">Pranita: "hehehehe" 👶💻</div>
+            </div>
+            <div class="photo">
+                <img src="IMG-20250505-WA0005.jpg" alt="Pranita shy">
+                <div class="caption">Pranita: "Accha" 😅</div>
+            </div>
+            <div class="photo">
+                <img src="IMG-20250505-WA0004.jpg" alt="Bus nap">
+                <!-- <div class="caption">"College trips = Sona zaroori hai!" 🚌💤</div> -->
+            </div>
+            <div class="photo">
+                <img src="IMG-20250505-WA0003.jpg" alt="Web CTM">
+                <div class="caption">"Hi im web ctm" 😄🖊️</div>
+            </div>
+            <div class="photo">
+                <img src="IMG-20250505-WA0001.jpg" alt="Classroom chill">
+                <!-- <div class="caption">"Classroom mein bhi swag!" 😎📚</div> -->
+            </div>
+            <div class="photo">
+                <img src="image1.png" alt="SARC Group">
+                <!-- <div class="caption">"S.A.R.C. - Hum sab ek family hain!" 🤗</div> -->
+            </div>
+            <div class="photo">
+                <img src="20231021_222629.jpg" alt="Akash on stage">
+                <!-- <div class="caption">Akash: "Red Bull aur stage, dono favourite!" 🕺🥤</div> -->
+            </div>
+            <div class="photo">
+                <img src="8383cbe3-c429-432f-a3b7-7e0da3446445.JPG" alt="Akash with dog">
+                <!-- <div class="caption">Akash: "Doggo bhi coding seekh raha hai!" 🐶💻</div> -->
+            </div>
+            <div class="photo">
+                <img src="WhatsApp Image 2025-05-05 at 13.14.56_2c364ba0.jpg" alt="Akash and Pranita on stage">
+                <!-- <div class="caption">"Stage pe dono, energy full on!" 🎤✨</div> -->
+            </div>
+        </div>
+    </section>
+
+    <audio id="bgMusic" src="emo.mp3" loop autoplay></audio>
+    <script>
+        // Timeline animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Add floating message system
+        function showFloatingMessage(message) {
+            const floatingMessage = document.createElement('div');
+            floatingMessage.className = 'floating-message';
+            floatingMessage.textContent = message;
+            document.body.appendChild(floatingMessage);
+            
+            setTimeout(() => {
+                floatingMessage.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                floatingMessage.classList.remove('show');
+                setTimeout(() => {
+                    floatingMessage.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Add click event to memory quotes
+        document.querySelectorAll('.memory-quote').forEach(quote => {
+            quote.addEventListener('click', () => {
+                showFloatingMessage('Yaad aa gayi na? 😊');
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const music = document.getElementById('bgMusic');
+            if (music) music.play();
+        });
+    </script>
+</body>
+</html> 

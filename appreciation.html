@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Appreciation Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .pokemon-cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            perspective: 1200px;
+        }
+        .pokemon-card {
+            width: 300px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(.4,2,.6,1);
+            cursor: pointer;
+        }
+        .pokemon-card.flipped {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-front {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            transform: rotateY(0deg);
+            z-index: 2;
+        }
+        .card-back {
+            background: linear-gradient(135deg, #ff8c00, #ffd700);
+            transform: rotateY(180deg);
+            z-index: 1;
+        }
+        .card-back img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+        }
+        .card-text {
+            color: #fff;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .next-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 2rem;
+            background: #ffd700;
+            color: #0a0a2a;
+            border: none;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .next-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        .who-text {
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .card-stats {
+            margin-top: 1rem;
+            width: 100%;
+        }
+        .stat {
+            margin: 0.5rem 0;
+        }
+        .stat-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            margin-top: 0.25rem;
+        }
+        .stat-bar::before {
+            content: '';
+            display: block;
+            height: 100%;
+            background: #fff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <div class="pokemon-cards">
+        <!-- Akash's Card -->
+        <div class="pokemon-card">
+            <div class="card-front">
+                <h2 class="who-text">Who's he?</h2>
+                <h2 class="card-title">Akash</h2>
+                <p class="card-text">From late-night coding sessions to being our go-to problem solver, Akash has been the backbone of our tech community. His infectious laughter and endless supply of dad jokes made every debugging session a memorable one. Who can forget his famous "Chalo, ek aur try karte hain!" that kept us going through tough times? 🚀</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span>Leadership</span>
+                        <div class="stat-bar" style="width: 90%"></div>
+                    </div>
+                    <div class="stat">
+                        <span>Humor</span>
+                        <div class="stat-bar" style="width: 95%"></div>
+                    </div>
+                    <div class="stat">
+                        <span>Knowledge</span>
+                        <div class="stat-bar" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-back">
+                <img src="akash.jpg" alt="Akash">
+                <h3 class="card-title">The Legendary Mentor</h3>
+                <p class="card-text">Click to flip back</p>
+            </div>
+        </div>
+        <!-- Pranita's Card -->
+        <div class="pokemon-card">
+            <div class="card-front">
+                <h2 class="who-text">Who's she?</h2>
+                <h2 class="card-title">Pranita</h2>
+                <p class="card-text">Pranita, our very own problem-solving wizard! Her ability to turn complex challenges into elegant solutions is nothing short of magical. Remember those times when she'd say "Arey, itna simple solution hai!" and we'd all be like "Kahan hai?!" 😄 Her positive energy and never-give-up attitude have inspired us all. 🌟</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <span>Creativity</span>
+                        <div class="stat-bar" style="width: 95%"></div>
+                    </div>
+                    <div class="stat">
+                        <span>Dedication</span>
+                        <div class="stat-bar" style="width: 90%"></div>
+                    </div>
+                    <div class="stat">
+                        <span>Team Spirit</span>
+                        <div class="stat-bar" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-back">
+                <img src="pranita.jpg" alt="Pranita">
+                <h3 class="card-title">The Creative Genius</h3>
+                <p class="card-text">Click to flip back</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="memories.html" class="next-button">
+        Next Chapter
+        <span>→</span>
+    </a>
+
+    <!-- Audio Elements -->
+    <audio id="cardSound" src="card-flip.mp3"></audio>
+    <audio id="bgMusic" src="emo.mp3" loop autoplay></audio>
+
+    <script>
+    // Card flip functionality
+    document.querySelectorAll('.pokemon-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            card.classList.toggle('flipped');
+            const flipSound = document.getElementById('cardSound');
+            if (flipSound) { flipSound.currentTime = 0; flipSound.play(); }
+        });
+    });
+    // Play background music on load
+    window.addEventListener('load', () => {
+        const music = document.getElementById('bgMusic');
+        if (music) music.play();
+    });
+    </script>
+</body>
+</html> 
